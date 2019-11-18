@@ -1,10 +1,20 @@
 const BookSearchList = require("./BookSearchList");
+const CommandQueryUrl = require("./CommandQueryUrl");
 const keys = require("./keys");
 
 const key = keys.APIKEY;
 
-const query = "harry";
+const query = "harry potter";
 
-const URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${key}`;
+// Generate Google Query URL: Params are api name, query, api key.
+const googleCommandQuery = new CommandQueryUrl(
+  "Google_Books",
+  query,
+  keys.APIKEY
+);
 
-const bookSearch = new BookSearchList(5, URL);
+const url = googleCommandQuery.generateUrl();
+
+const bookSearch = new BookSearchList(5, url);
+
+bookSearch.getBookList().then(list => console.log(list));

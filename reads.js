@@ -4,9 +4,9 @@ const buildQuery = require("./buildQuery");
 const bookItems = require("./bookItems");
 const bookSelection = require("./bookSelection");
 const viewMyList = require("./viewMyList");
-const keys = require("./keys");
+require("dotenv").config();
 
-const key = keys.APIKEY;
+const key = process.env.GOOGLE_BOOKS_API_KEY;
 
 // Conditional for command line search arguements
 if (process.argv.length === 3) {

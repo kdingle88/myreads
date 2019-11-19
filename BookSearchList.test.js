@@ -1,8 +1,8 @@
 const BookSearchList = require("./BookSearchList");
-const keys = require("./keys");
+require("dotenv").config();
 
 test("See if data is fetched & equal length provided", () => {
-  const key = keys.APIKEY;
+  const key = process.env.GOOGLE_BOOKS_API_KEY;
   const query = "harry";
 
   const URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${key}`;

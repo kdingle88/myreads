@@ -13,13 +13,12 @@ class CommandQueryUrl {
         case "Google_Books":
           const URL = `https://www.googleapis.com/books/v1/volumes?q=${this.query}&key=${this.key}`;
           return URL;
-          break;
+
         default:
           console.log("Enter a valid API Name");
       }
-    } catch (error) {
-      console.log(error);
-      console.log("Enter Valid Details");
+    } catch (e) {
+      console.error("ENTER VALID DETIALS", e);
     }
   }
 }

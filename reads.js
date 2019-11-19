@@ -26,8 +26,8 @@ if (process.argv.length === 3) {
       const bookItemList = bookItems(list);
 
       bookSelection(bookItemList);
-    } catch (error) {
-      console.log(error);
+    } catch (e) {
+      console.error("COULD NOT GET LIST", e);
     }
   });
 }

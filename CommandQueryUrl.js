@@ -4,15 +4,13 @@ class CommandQueryUrl {
   constructor(api, query, key) {
     this.api = api;
     this.key = key;
-    this.query = query.toLowerCase().replace(/\s+/g, "+");
+    this.query = query;
   }
 
   generateUrl() {
     try {
       switch (this.api) {
         case "Google_Books":
-          //lower case query
-          //replace spaces with +
           const URL = `https://www.googleapis.com/books/v1/volumes?q=${this.query}&key=${this.key}`;
           return URL;
           break;

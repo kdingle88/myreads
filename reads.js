@@ -3,6 +3,7 @@ const CommandQueryUrl = require("./CommandQueryUrl");
 const buildQuery = require("./buildQuery");
 const bookItems = require("./bookItems");
 const bookSelection = require("./bookSelection");
+const viewMyList = require("./viewMyList");
 const keys = require("./keys");
 
 const key = keys.APIKEY;
@@ -24,7 +25,7 @@ if (process.argv.length === 3) {
     try {
       const bookItemList = bookItems(list);
 
-      bookSelection(query, bookItemList);
+      bookSelection(bookItemList);
     } catch (error) {
       console.log(error);
     }
@@ -33,9 +34,5 @@ if (process.argv.length === 3) {
 
 // Conditional Command to generate reading list
 if (process.argv[2] === "my" && process.argv[3] === "reading list") {
-  function viewMyList() {
-    return "This is your Reading List";
-  }
-
-  console.log(viewMyList());
+  viewMyList("readingList.json");
 }

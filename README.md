@@ -11,7 +11,7 @@ _Make sure to add API credentials to .env file for it to work. I have included a
 _Also, Run npm install to install node packages_
 
 ```
-npm insall
+npm install
 ```
 
 ### Search & Add to Reading List

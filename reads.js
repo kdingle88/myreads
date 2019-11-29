@@ -6,10 +6,22 @@ const bookSelection = require("./bookSelection");
 const viewMyList = require("./viewMyList");
 require("dotenv").config();
 
-const key = process.env.GOOGLE_BOOKS_API_KEY;
-
 // Conditional for command line search arguements
 if (process.argv.length === 3) {
+  const key = process.env.GOOGLE_BOOKS_API_KEY;
+
+  // check for key before proceeding
+  if (!key) {
+    return console.error(
+      `
+      Api key not set. Please set your Google books api key in .env file in order to proceed. 
+  
+      For further detailed instructions, check out the myReads documentation here: https://github.com/kdingle88/myreads
+  
+  `
+    );
+  }
+
   // Get query param from command args
   const query = buildQuery();
 

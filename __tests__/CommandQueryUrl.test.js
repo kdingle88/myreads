@@ -1,5 +1,5 @@
-const CommandQueryUrl = require("./CommandQueryUrl");
-const buildQuery = require("./buildQuery");
+const CommandQueryUrl = require("../CommandQueryUrl");
+const buildQuery = require("../buildQuery");
 require("dotenv").config();
 
 const key = process.env.GOOGLE_BOOKS_API_KEY;

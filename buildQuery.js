@@ -1,6 +1,7 @@
 const buildQuery = (str = process.argv[2]) => {
   if (typeof str != "string") {
-    throw Error("Must Enter string value");
+    console.error("Must enter a string value");
+    return;
   }
   const querySearch = str;
 
